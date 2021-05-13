@@ -1,0 +1,105 @@
+1)
+package classandobject;
+
+public class One {
+
+    double h,w,d;
+
+     One(double width,double height,double depth)
+    {
+        h=height;
+        w=width;
+        d=depth;
+    }
+    double volume()
+    { double v;
+    v=h*w*d;
+    return v;
+    }
+   
+    public static void main(String[] args) {
+       
+    One bc = new One(8.5,80.3,9.6);
+    System.out.println(bc.volume());
+
+    }
+
+}
+2)
+package classandobject;
+
+public class Two {
+
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+    System.out.println(Calculator.powerDouble(85.0, 2));
+    System.out.println(Calculator.powerInt(85,3));
+    }
+
+}
+
+class Calculator
+{
+    static double powerInt(int num1,int num2)
+    {
+        return Math.pow(num1,num2);
+    }
+static double powerDouble(double num1,int num2)
+{
+    return Math.pow(num1,num2);
+}
+}
+3)
+package classandobject;
+
+import java.util.Scanner;
+
+public class Three {
+
+    public static void main(String[] args) {
+        BMICalc();
+        BMICalcBonus1();
+        BMICalcBonus1FeetInches();
+    }
+
+    public static void BMICalc() {
+        Scanner keyboard = new Scanner(System.in);
+        double height, weight, BMI;
+        System.out.print("Your height in m: ");
+        height = keyboard.nextDouble();
+        System.out.print("Your weight in kg: ");
+        weight = keyboard.nextDouble();
+        BMI = weight / (height * height);
+        System.out.println();
+        System.out.println("Your BMI is " + BMI);
+    }
+
+    public static void BMICalcBonus1() {
+        Scanner keyboard = new Scanner(System.in);
+        double height, weight, BMI;
+        System.out.print("Your height in inches: ");
+        height = keyboard.nextDouble();
+        System.out.print("Your weight in pounds: ");
+        weight = keyboard.nextDouble();
+        BMI = weight * (703 / (height * height));
+        System.out.println();
+        System.out.println("Your BMI is " + BMI);
+    }
+
+    // For an extra +3 bonus points (+13 total), input their height in feet and inches.
+    public static void BMICalcBonus1FeetInches() {
+        Scanner keyboard = new Scanner(System.in);
+        double height, heightFeet, heightInches, weight, BMI;
+        System.out.print("Your height (feet only): ");
+        heightFeet = keyboard.nextDouble();
+        System.out.print("Your height (inches): ");
+        heightInches = keyboard.nextDouble();
+        System.out.print("Your weight in pounds: ");
+        weight = keyboard.nextDouble();
+        height = heightFeet * 12 + heightInches;
+        BMI = weight * (703 / (height * height));
+        System.out.println();
+        System.out.println("Your BMI is " + BMI);
+    }
+}
